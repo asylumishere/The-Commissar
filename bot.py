@@ -42,17 +42,7 @@ async def purge(ctx, amount=2):
     await ctx.channel.purge(limit=amount)
     await ctx.send('Your opinion doesnt matter...'
 
-@commands.has_permissions(manage_guild=True)
-@client.command()
-async def delete(ctx, member : discord.Member, *, reason=None):
-    await member.kick(reason=reason)
-    await ctx.send(f'Get deleted... {member.mention}')
 
-@commands.has_permissions(manage_guild=True)
-@client.command()
-async def ban(ctx, member : discord.Member, *, reason=None):
-    await member.ban(reason=reason)
-    await ctx.send(f'You will never come back here... {member.mention}')
 
 
 client.run("NzMzOTg0MzAxNjk5MzAxNDM4.XxL0iA.SDTAZNUegOyiW_tttucDGeqbKWY")
