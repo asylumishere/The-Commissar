@@ -53,5 +53,9 @@ async def ban(ctx, member : discord.Member, *, reason=None):
 async def kick(ctx, member : discord.Member, *, reason=None):
     await member.kick(reason=reason)
     await ctx.send(f'Get deleted... {member.mention}')
+    
+@client.command()
+async def fban(ctx, *, member):
+    await ctx.send('**SIKE, YOU THOUGHT YOU CAN BAN IDIOT!**')
 
 client.run('NzM0NTkyNDM4NjAxMTIxODQy.XxUadA.SRhaMLqN75KB_n7SuJez5OlPm5w')
