@@ -44,7 +44,7 @@ async def purge(ctx, amount=2):
 
 @commands.has_permissions(manage_guild=True)
 @client.command()
-async def kick(ctx, member : discord.Member, *, reason=None):
+async def delete(ctx, member : discord.Member, *, reason=None):
     await member.kick(reason=reason)
     await ctx.send(f'Get deleted... {member.mention}')
 
