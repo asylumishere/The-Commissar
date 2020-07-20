@@ -8,7 +8,7 @@ import colorsys
 import random
 import time
 
-client = commands.Bot(command_prefix = '-', case_insensitive=True)
+client = commands.Bot(command_prefix = '^')
 Client = discord.client
 Clientdiscord = discord.Client()
 
@@ -49,4 +49,4 @@ async def fortuneball(ctx, * , question):
 async def purge(ctx, amount=2):
     await ctx.channel.purge(limit=amount)
     await ctx.send('Your opinion doesnt matter...'
-client.run('NzM0NTkyNDM4NjAxMTIxODQy.XxT82g.NPpg0oFxxmyVmNzh8gRwCmvllAE')
+Client.run("NzM0NTkyNDM4NjAxMTIxODQy.XxT82g.NPpg0oFxxmyVmNzh8gRwCmvllAE")
