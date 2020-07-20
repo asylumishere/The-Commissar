@@ -1,8 +1,16 @@
 import discord
-import random
+from discord.ext.commands import bot
+from discord import game
 from discord.ext import commands
+import asyncio
+import platform
+import colorsys
+import random
+import time
 
-client = commands.Bot(command_prefix = '!')
+client = commands.Bot(command_prefix = '-', case_insensitive=True)
+Client = discord.client
+Clientdiscord = discord.Client()
 
 @client.event
 async def on_ready():
