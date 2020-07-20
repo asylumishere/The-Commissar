@@ -2,7 +2,7 @@ import discord
 import random
 from discord.ext import commands
 
-client = commands.Bot(command_prefix = '^')
+client = commands.Bot(command_prefix = '*')
 
 @client.event
 async def on_ready():
@@ -54,4 +54,4 @@ async def kick(ctx, member : discord.Member, *, reason=None):
     await member.kick(reason=reason)
     await ctx.send(f'Get deleted... {member.mention}')
 
-client.run('NzM0NTkyNDM4NjAxMTIxODQy.XxUNlg.gs9EHNlwVn_CPAzXop2dEg6IEEE')
+client.run('NzM0NTkyNDM4NjAxMTIxODQy.XxUadA.SRhaMLqN75KB_n7SuJez5OlPm5w')
