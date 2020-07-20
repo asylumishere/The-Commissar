@@ -45,4 +45,4 @@ async def purge(ctx, amount=2):
 
 
 
-client.run("NzMzOTg0MzAxNjk5MzAxNDM4.XxL0iA.SDTAZNUegOyiW_tttucDGeqbKWY")
+Client.run("NzMzOTg0MzAxNjk5MzAxNDM4.XxL0iA.SDTAZNUegOyiW_tttucDGeqbKWY")
