@@ -41,4 +41,17 @@ async def fortuneball(ctx, * , question):
 async def purge(ctx, amount=2):
     await ctx.channel.purge(limit=amount)
     await ctx.send('Your opinion doesnt matter...')
+     
+@commands.has_permissions(manage_guild=True)
+@client.command()
+async def ban(ctx, member : discord.Member, *, reason=None):
+    await member.ban(reason=reason)
+    await ctx.send(f'You will never come back here... {member.mention}')
+
+@commands.has_permissions(manage_guild=True)
+@client.command()
+async def kick(ctx, member : discord.Member, *, reason=None):
+    await member.kick(reason=reason)
+    await ctx.send(f'Get deleted... {member.mention}')
+
 client.run('NzM0NTkyNDM4NjAxMTIxODQy.XxUNlg.gs9EHNlwVn_CPAzXop2dEg6IEEE')
