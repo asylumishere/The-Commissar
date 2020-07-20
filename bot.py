@@ -48,5 +48,5 @@ async def fortuneball(ctx, * , question):
 @client.command()
 async def purge(ctx, amount=2):
     await ctx.channel.purge(limit=amount)
-    await ctx.send('Your opinion doesnt matter...'
-client.run("NzM0NTkyNDM4NjAxMTIxODQy.XxUNlg.gs9EHNlwVn_CPAzXop2dEg6IEEE")
+    await ctx.send('Your opinion doesnt matter...')
+client.run(os.environ['NzM0NTkyNDM4NjAxMTIxODQy.XxUNlg.gs9EHNlwVn_CPAzXop2dEg6IEEE'])
