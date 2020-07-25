@@ -1,12 +1,47 @@
 import discord
 import random
 from discord.ext import commands
+import asyncio
 
 client = commands.Bot(command_prefix = '*')
+client.remove_command('help')
 
 @client.event
 async def on_ready():
     print("Bot is ready.")
+   
+@client.command(aliases=['Help'])
+async def help(ctx):
+    embed = discord.Embed(
+     colour=discord.Colour.orange()
+    )
+    embed.set_author(name="Commands")
+    embed.set_thumbnail(url="https://media.discordapp.net/attachments/733991796799045683/736460006718963752/technobladee.jpg")
+    embed.add_field(name="help", value="`Shows this message.`", inline=False)
+    embed.add_field(name="fortuneball", value="`It shows your fortune.`")
+    embed.add_field(name="ping", value="`Shows your latency.`", inline=False)
+    embed.add_field(name="fban", value="`It's maybe a ban...`")
+    embed.add_field(name="mod", value="`Shows moderator commands.`", inline=False)
+    embed.add_field(name="beat", value="`Beat the shit out of someone.`")   
+    embed.set_footer(text="Created by val̸̒̏ȯ̸̿r̸͊͑#2774", icon_url="https://images-ext-1.discordapp.net/external/fsiz3ER16gezLXfgDY7TM9-EWRjFfxVOPZXaCgrJ3K4/%3Fsize%3D256/https/cdn.discordapp.com/avatars/298424256075792385/08d6b28a6baa8725778d0558a7da59c6.png")
+    await ctx.send(embed=embed)
+    
+@commands.has_permissions(manage_guild=True)
+@client.command()
+async def mod(ctx):
+    embed = discord.Embed(
+     colour=discord.Colour.blue()
+    )
+    embed.set_author(name="Moderator Commands")
+    embed.set_thumbnail(url="https://media.discordapp.net/attachments/733991796799045683/736460006718963752/technobladee.jpg")
+    embed.add_field(name="`mod`", value="`Shows this message.`", inline=False)
+    embed.add_field(name="`kick`", value="`Kick Command.`")
+    embed.add_field(name="`ban`", value="`Ban Command.`", inline=False)
+    embed.add_field(name="`purge`", value="`Deletes messages.`")
+    embed.set_footer(text="Created by val̸̒̏ȯ̸̿r̸͊͑#2774", icon_url="https://images-ext-1.discordapp.net/external/fsiz3ER16gezLXfgDY7TM9-EWRjFfxVOPZXaCgrJ3K4/%3Fsize%3D256/https/cdn.discordapp.com/avatars/298424256075792385/08d6b28a6baa8725778d0558a7da59c6.png")
+    await ctx.send(embed=embed)
+    
+  
 
 @client.command()
 async def ping(ctx):
@@ -57,5 +92,10 @@ async def kick(ctx, member : discord.Member, *, reason=None):
 @client.command()
 async def fban(ctx, *, member):
     await ctx.send('**SIKE, YOU THOUGHT YOU CAN BAN IDIOT!**')
+    
+@client.command()
+async def beat(ctx, member : discord.Member):
+    author = ctx.message.author
+    await ctx.send(f'Ouch!, {author.mention} has beaten the shit out of {member.mention}.')    
 
 client.run('NzM0NTkyNDM4NjAxMTIxODQy.XxUadA.SRhaMLqN75KB_n7SuJez5OlPm5w')
