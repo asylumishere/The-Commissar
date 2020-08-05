@@ -53,7 +53,7 @@ async def mod(ctx):
     embed.add_field(name= "mod", value= "`Shows this message.`", inline=False)
     embed.add_field(name="kick", value="`Kick Command.`")
     embed.add_field(name="ban", value="`Ban Command.`", inline=False)
-    embed.add_field(name="purge", value="`Deletes messages.`")
+    embed.add_field(name="clear", value="`Deletes messages.`")
     embed.set_footer(text=f"Requested by {ctx.author}", icon_url="https://media.discordapp.net/attachments/439758640782508032/739310715323809798/1fd4a1952514b759f4695a04892a9a2b.gif")
     await author.send(embed=embed)
     await ctx.send(f'Check your DMs! {author.mention}')
