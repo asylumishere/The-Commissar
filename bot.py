@@ -4,7 +4,6 @@ import os
 from discord.ext import commands
 from discord.ext import tasks
 import asyncio
-import embedlinks
 
 client = commands.Bot(command_prefix = 'rf!')
 client.remove_command('help')
