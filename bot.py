@@ -6,13 +6,13 @@ from discord.ext import tasks
 import asyncio
 import embedlinks
 
-client = commands.Bot(command_prefix = '!')
+client = commands.Bot(command_prefix = 'rf!')
 client.remove_command('help')
 
 @client.event
 async def on_ready():
     print("Bot is ready.")
-    await client.change_presence(activity=discord.Game(name="with some commands."))
+    await client.change_presence(activity=discord.Game(name="Type rf!help to get started!"))
 
 @client.event
 async def on_command_error(ctx, error):
@@ -33,12 +33,13 @@ async def help(ctx):
      colour=discord.Colour.dark_purple()
     )
     embed.set_author(name="Commands")
-    embed.set_thumbnail(url="https://media.discordapp.net/attachments/733991796799045683/736460006718963752/technobladee.jpg")
+    embed.set_thumbnail(url="https://images-ext-2.discordapp.net/external/5DQP30I0tXfdlAl1SchTaKGFGEtyw9Gd8bj2M4WZhcQ/%3Fwidth%3D472%26height%3D472/https/media.discordapp.net/attachments/446514228590018563/538006663177830425/image0.jpg")
     embed.add_field(name="help", value="`Shows this message.`", inline=False)
     embed.add_field(name="fortuneball", value="`It shows your fortune.`")
     embed.add_field(name="mod", value="`Shows moderator commands.`", inline=False)
-    embed.add_field(name="beat", value="`Beat the shit out of someone.`")
-    embed.set_footer(text="Created by [REDACTED]", icon_url="https://media.discordapp.net/attachments/439758640782508032/739310715323809798/1fd4a1952514b759f4695a04892a9a2b.gif")
+    embed.add_field(name="waifu", value="Gives you an anime waifu picture.")
+    embed.add_field(name="beatdown", value="`Beat the shit out of someone, jojo style.`", inline=False)
+    embed.set_footer(text=f"Requested by {ctx.author}", icon_url="https://media.discordapp.net/attachments/439758640782508032/739310715323809798/1fd4a1952514b759f4695a04892a9a2b.gif")
     await ctx.send(embed=embed)
 
 @client.command()
@@ -49,14 +50,12 @@ async def mod(ctx):
      colour=discord.Colour.dark_red()
     )
     embed.set_author(name="Moderator Commands")
-    embed.set_thumbnail(url="https://media.discordapp.net/attachments/733991796799045683/736460006718963752/technobladee.jpg")
-    embed.add_field(name= "`mod`", value= "`Shows this message.`", inline=False)
-    embed.add_field(name="`kick`", value="`Kick Command.`")
-    embed.add_field(name="`ban`", value="`Ban Command.`", inline=False)
-    embed.add_field(name="`purge`", value="`Deletes messages.`")
-    embed.add_field(name="`send`", value="`Sends a message to everyones' direct messages.`", inline=False)
-    embed.add_field(name="`activity`", value="`Sends an activity check.`")
-    embed.set_footer(text="Created by [REDACTED]", icon_url="https://media.discordapp.net/attachments/439758640782508032/739310715323809798/1fd4a1952514b759f4695a04892a9a2b.gif")
+    embed.set_thumbnail(url="https://images-ext-2.discordapp.net/external/5DQP30I0tXfdlAl1SchTaKGFGEtyw9Gd8bj2M4WZhcQ/%3Fwidth%3D472%26height%3D472/https/media.discordapp.net/attachments/446514228590018563/538006663177830425/image0.jpg")
+    embed.add_field(name= "mod", value= "`Shows this message.`", inline=False)
+    embed.add_field(name="kick", value="`Kick Command.`")
+    embed.add_field(name="ban", value="`Ban Command.`", inline=False)
+    embed.add_field(name="purge", value="`Deletes messages.`")
+    embed.set_footer(text=f"Requested by {ctx.author}", icon_url="https://media.discordapp.net/attachments/439758640782508032/739310715323809798/1fd4a1952514b759f4695a04892a9a2b.gif")
     await author.send(embed=embed)
     await ctx.send(f'Check your DMs! {author.mention}')
 
@@ -72,14 +71,8 @@ async def unload(ctx, extension):
     client.unload_extension(f'cogs.{extension}')    
     print(f"Unloaded {extension}")
 
-@client.command()
-@commands.has_guild_permissions(manage_guild=True)
-async def activity(ctx):
-     channel = client.get_channel(734034368691175485)
-     await channel.send("@everyone Activity Check!")
-
 for filename in os.listdir('./cogs'):
     if filename.endswith('.py'):
         client.load_extension(f'cogs.{filename[:-3]}')
 
-client.run("NzMzOTg0MzAxNjk5MzAxNDM4.XxL0iA.SDTAZNUegOyiW_tttucDGeqbKWY")
+client.run("NzM0NTkyNDM4NjAxMTIxODQy.XxT8hQ.x744JQEh6IkgnGpT6WP5gPg9YmI")
