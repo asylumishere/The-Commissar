@@ -41,5 +41,5 @@ waifulinks = [
 
 "https://media.discordapp.net/attachments/734034302555127808/740537757545267210/d32d37cc0e580d6b97700badf23adcaa.png?width=266&height=472",
 "https://media.discordapp.net/attachments/734034302555127808/740537885530390618/625e2c064575a34abfbc175b2f51f5db.png?width=334&height=472",
-"https://media.discordapp.net/attachments/733837942421717105/740538267270905906/anime-anime-girls-zero-two-darling-in-the-franxx-darling-in-the-franxx-wallpaper-preview.png",
+"https://media.discordapp.net/attachments/733837942421717105/740538267270905906/anime-anime-girls-zero-two-darling-in-the-franxx-darling-in-the-franxx-wallpaper-preview.png"
 ]
