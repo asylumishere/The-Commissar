@@ -27,6 +27,16 @@ async def on_command_error(ctx, error):
     raise error
 
 @client.command()
+async def on_message(ctx, message):
+    if str(message.channel) == "general-discussions" and str(message.content) == "" and message.author.id == 410944114310250512:
+        await message.channel.purge(limit=1)
+    
+    await client.process_commands(message)
+    await ctx.send("Jack your memes are bad.")
+ 
+
+
+@client.command()
 async def help(ctx):
     embed = discord.Embed(
      colour=discord.Colour.dark_purple()
